@@ -1,0 +1,790 @@
+@font-face {
+	font-family: "Gilroy Medium";
+	src: url("asset://garrysmod/lua/menu/!sbox/html/font/Gilroy-Regular.ttf") format("truetype");
+
+	font-style: normal; 
+}
+
+@font-face {
+	font-family: "Gilroy Regular";
+	src: url("asset://garrysmod/lua/menu/!sbox/html/font/Gilroy-Regular.ttf") format("truetype");
+	font-style: light; 
+}
+
+
+.page .menu_list {
+	display: flex;
+	flex-direction: column;
+	margin-left: 156px;
+}
+
+.page .menu_list h1 {
+	all: unset;
+	margin-top: 38px;
+	color: white;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 93px;
+	letter-spacing: 0em;
+	text-align: left;
+}
+
+.page .menu_list .info {
+	all: unset;
+	margin-top: 5px;
+	margin-left: 16px;
+	
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+
+
+	letter-spacing: 0.05em;
+
+	color: rgba(255, 255, 255, 0.49);
+}
+
+.page .menu_list .context_btn {
+	margin-top: 30px;
+	color: white;
+	height: 378px;
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 25px;
+	letter-spacing: 0.005em;
+	display: flex;
+	flex-direction: column	;
+	text-align: left;
+}
+
+.context_btn li {
+
+	all: unset;
+	cursor: pointer;
+	padding-left: 60px;
+	padding-right: 60px;
+	margin-top: 10px;
+	color: rgba(255, 255, 255, 0.5);
+	height: 53px;
+	border-radius: 4px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(122, 137, 166, 0.1);
+	align-self: flex-start;
+	transition: 0.5s;
+}
+
+.context_btn li:hover {
+	background: rgba(122, 137, 166, 0.15);
+}
+
+.context_btn li.active {
+	color: white;
+	background: #2E71EF;
+	
+}
+
+.sort_panel {
+	margin-top: 10px;
+	width: 360px;
+	height: 375px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 8px;
+	color: white;
+}
+.sort_panel .panel {
+	margin: 23px;
+}
+
+
+.sort_panel li {
+	margin-bottom: 12px;
+}
+
+.sort_panel span {
+	display: flex;
+	margin-top: 2px;
+	flex-direction: row;
+	align-items: center;
+	margin-left: 10px;
+	letter-spacing: 0.05em;
+}
+
+.sort_panel h2 {
+	font-weight: 200;
+
+	margin-bottom: 20px;
+}
+
+
+
+
+
+.b-contain *,
+.b-contain *::before,
+.b-contain *::after {
+  box-sizing: content-box !important;
+}
+
+.b-contain input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.b-contain span {
+  line-height: 1.5;
+  font-size: 1rem;
+}
+
+.b-contain {
+  display: table;
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+
+.b-contain input[type="checkbox"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: #f9f1f1;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+
+
+
+.b-contain input[type="checkbox"]:checked ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 12px;
+  top: 7px;
+  width: 0.3rem;
+  height: 0.6rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+
+
+.b-contain input:checked ~ .b-input::after {
+  display: block;
+}
+
+.b-contain:hover input[type="checkbox"]:not([disabled]) ~ .b-input,
+.b-contain input[type="checkbox"]:focus ~ .b-input {
+  background: rgba(122, 137, 166, 0.2);
+
+}
+
+.b-contain input[type="checkbox"]:not([disabled]) ~ .b-input,
+.b-contain input[type="checkbox"]:focus ~ .b-input {
+  background: rgba(122, 137, 166, 0.1);
+}
+
+.b-contain input[type="checkbox"]:checked ~ .b-input {
+  background: #3472E6;
+}
+
+
+.b-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .b-input,
+.b-contain input[type="checkbox"]:checked:focus ~ .b-input {
+  background: #2563eb;
+}
+
+
+/* RADIO  */
+
+.b-contain input[type="radio"] ~ .b-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background: #f9f1f1;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+
+
+
+.b-contain input[type="radio"]:checked ~ .b-input::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 12px;
+  top: 7px;
+  width: 0.3rem;
+  height: 0.6rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+
+.b-contain:hover input[type="radio"]:not([disabled]) ~ .b-input,
+.b-contain input[type="radio"]:focus ~ .b-input {
+  background: rgba(122, 137, 166, 0.2);
+
+}
+
+.b-contain input[type="radio"]:not([disabled]) ~ .b-input,
+.b-contain input[type="radio"]:focus ~ .b-input {
+  background: rgba(122, 137, 166, 0.1);
+}
+
+.b-contain input[type="radio"]:checked ~ .b-input {
+  background: #3472E6;
+}
+
+
+.b-contain:hover input[type="radio"]:not([disabled]):checked ~ .b-input,
+.b-contain input[type="radio"]:checked:focus ~ .b-input {
+  background: #2563eb;
+}
+
+/* end  */
+
+
+.gamemodes_list {
+	width: 1vw;
+	margin-left: 94px;
+	width: 1162px;
+
+	margin-top: 65px;
+	/* overflow-y: auto; */
+}
+
+.gamemodes_list .info {
+	margin-left: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 35px;
+}
+
+.gamemodes_list .info h1 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 154.5%;
+	color: white;
+	letter-spacing: 0.05em;
+
+}
+
+.gamemodes_list .info p {
+	all: unset;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	margin-left: 32px;
+	margin-top: 15px;
+	line-height: 154.5%;
+
+	letter-spacing: 0.05em;
+
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.gamemodes_list ul {
+	display: flex;	
+	/* height: 848px; */
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+.gamemodes_list .gamemodes {
+	overflow-y: auto;
+	height: 848px;
+}
+
+.gamemodes .pl_info {
+	display: flex;
+	flex-direction: row;
+}
+
+.gamemodes .pl_info p {
+	margin-right: 3px;
+}
+
+.gamemodes_list .gamemodes::-webkit-scrollbar {
+	background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+	/* font-size: ; */
+}
+
+.gamemodes_list .gamemodes::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+	width: 4px;
+}
+
+.gamemodes_list li {
+	all: unset;
+	cursor: pointer;
+	margin-left: 47px;
+	/* margin-bottom: 56px; */
+	display: flex;
+	/* justify-content: center; */
+	align-items: center;
+	flex-direction: column;
+	
+}
+.gamemodes_list .mod {
+	width: 235px;
+	height: 235px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 15px;
+	transition: 0.5s;
+}
+
+.gamemodes_list .mod:hover {
+	background: rgba(122, 137, 166, 0.15);
+}
+
+.mod .mod_logo {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 35px;
+}
+
+.mod_logo img {
+	all: unset;
+	width: 69px;
+	height: 69px;
+	margin-top: 71px;
+}
+
+.mod .mod_info  {
+	display: flex;
+	flex-wrap: nowrap;
+	justify-content: center;
+	/* align-items: center; */
+	flex-direction: row;
+	/* margin-left: 22px; */
+}
+
+
+.mod .mod_info p {
+	/* background: red; */
+	font-weight: 600;
+	font-size: 20px;
+	white-space: nowrap;
+	line-height: 154.5%;
+	/* background: red; */
+	max-width:200px;
+	/* width: auto; */
+	
+	color: white;
+}
+
+
+
+.mod_info p.type {
+	display: flex;
+	/* text-align: center; */
+	margin-left: 8px;
+	padding: 0 14px 0 14px;
+	align-items: center;
+	justify-content: center;
+	
+	flex-wrap: nowrap;
+	height: 25px;
+	/* background: #2E71EF; */
+	border-radius: 6px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 154.5%;
+}
+
+.gamemodes_list p {
+	margin-top: 5px;
+	margin-bottom: 29px;
+	color: rgba(255, 255, 255, 0.4);
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 154.5%;
+}
+
+
+/* Servers List  */
+
+.servers_list .servers::-webkit-scrollbar {
+	background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+	/* font-size: ; */
+}
+
+.servers_list .servers::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+}
+
+
+.servers_list {
+	width: 1vw;
+	margin-left: 94px;
+	width: 1148px;
+	margin-top: 65px;
+}
+
+.servers_list .info {
+	margin-left: 40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 35px;
+}
+
+.servers_list .info h1 {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 154.5%;
+	color: white;
+	letter-spacing: 0.05em;
+
+}
+
+.servers_list .info p {
+	all: unset;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	margin-left: 24px;
+	margin-top: 5px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid #ffffff86;
+	/* margin-top: 15px; */
+	line-height: 154.5%;
+	letter-spacing: 0.05em;
+	cursor: pointer;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.servers_list .info input {
+	padding-left: 18px;
+	margin-top: 10px;
+	margin-left: 24px;
+	height: 53px;
+	width: 419px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 10px 0px 0px 10px;
+	border: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	/* identical to box height, or 25px */
+
+	letter-spacing: 0.1em;
+
+	color: rgba(255, 255, 255, 0.4);
+}
+
+.servers_list .sort_title {
+	
+	width: 1089px;
+	height: 35px;
+	margin-left: 45px;
+	display: flex;
+	align-items: center;
+	margin-bottom: 5px;
+	
+}
+
+.sort_title .btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 8px 8px 0 0;
+	padding: 3px 7px 3px 7px;
+}
+
+.sort_title img {
+	opacity: 0.51;
+	width: 18px;
+	height: 18px;
+}
+
+.servers_list .servers {
+	/* background: red; */
+	overflow-y: auto;
+	height: 848px;
+	width: 1162px;
+}
+
+
+
+.servers_list .servers ul {
+
+	margin-left: 45px;
+	display: flex;
+	flex-direction: column;
+}
+
+.servers_list li {
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	max-width: 1089px;
+	width: 100%;
+	height: 73px;
+	margin-bottom: 12px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.servers_list li:hover {
+	background: rgba(122, 137, 166, 0.15);
+}
+
+.servers_list .player_list li:hover {
+	background: rgba(122, 137, 166, 0.1);
+}
+
+.servers_list li .flag {
+	width: 85px;
+	height: 100%;
+	/* background: red; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+li .flag img {
+	all: unset;
+	height: 28px;
+	width: 28px;
+}
+
+.servers_list li .server_name {
+	margin-left: 2px;
+	font-style: normal;
+	font-weight: lighter;
+	/* font-size: 18px; */
+	line-height: 154.5%;
+	/* background: red; */
+	width: 540px;
+	letter-spacing: 0.05em;
+
+	color: #FFFFFF;
+}
+li.no_pl {
+	opacity: 0.5;
+}
+
+.servers_list .players_info {
+	font-style: normal;
+	font-weight: lighter;
+	font-size: 18px;
+	line-height: 154.5%;
+	/* background: red; */
+	width: 192px;
+	letter-spacing: 0.05em;
+	color: #FFFFFF;
+	display: flex;
+	flex-direction: row;
+}
+
+.servers_list .ping_info {
+	display: flex;
+	align-items: center;
+	/* background: red; */
+	width: 120px;
+	/* background: #2E71EF; */
+}
+
+
+.servers_list .ping_info p {
+	margin-left: 16px;
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 24px;
+	letter-spacing: 0.05em;
+	text-align: left;
+	color: white;
+
+}
+
+.help_btn {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	height: 100%;
+}
+
+.help_btn .lock {
+	display: flex;
+	align-items: center;
+	/* background: red; */
+	height: 100%;
+	width: 32px;
+	justify-content: center;
+	/* background: red;4 */
+	margin-right: 25px;
+}
+
+.help_btn .lock img {
+	all: unset;
+	width: 22px;
+	height: 20px;
+	opacity: 0.51;
+}
+
+.help_btn .fav_toggle {
+	width: 32px;
+	/* background: rgb(0, 255, 13); */
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.help_btn p.open_info {
+	/* background: red; */
+	padding: 5px;
+}
+
+.fav_toggle img {
+	all: unset;
+	opacity: 0.51;
+	cursor: pointer;
+	height: 18px;
+	width: 18px;
+}
+
+.servers .server_info {
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 900;
+	padding: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: rgba(0,0,0,0.4);
+}
+
+.server_info .content {
+	height: 80%;
+	width: 60%;
+	display: flex;
+	/* justify-content: center; */
+	flex-direction: column;
+	align-items: center;
+	backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
+    background-color: rgba(53, 53, 53, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.content .player_list ul{
+	margin: 30px 0 0 0;
+	width: 1000px;
+	display: flex;
+	flex-direction: column;
+	overflow-y:auto;
+	padding-right: 15px;
+	height: 550px;
+	align-items: center;
+	/* background: red; */
+}
+
+.content .player_list ul::-webkit-scrollbar {
+	background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+}
+
+.content .player_list ul::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+	width: 4px;
+}
+
+.server_info .content h1 {
+	margin-top: 30px;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 25px;
+	line-height: 154.5%;
+	color: white;
+	letter-spacing: 0.05em;
+}
+
+.content .player_list li {
+	/* background: red; */
+	height: 50px;
+}
+
+.content .player_list .row {
+	display: flex;
+	flex-direction: row;
+	padding: 15px;
+	justify-content: space-between;
+	color: rgba(255, 255, 255, 0.5);
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	cursor: default;
+}
+
+.context p {
+	font-size: 16px;
+	font-weight: 200;
+	line-height: 25px;
+	letter-spacing: 0.005em;
+	color: white;
+}
+
+.content .context {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 70px;
+	width: 300px;
+	border-radius: 4px;
+	cursor: pointer;
+	background: #2E71EF;
+	margin-top: 50px;
+}
+
+.servers_list li  p.transp {
+	color: rgba(255, 255, 255, 0.486);
+}
+
+
+.help_btn p {
+	margin-left: 16px;
+	font-size: 20px;
+	font-weight: 100;
+	line-height: 24px;
+	letter-spacing: 0.05em;
+	text-align: left;
+	color: rgba(255, 255, 255, 0.49);	
+	cursor: pointer;
+
+}

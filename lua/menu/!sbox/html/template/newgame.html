@@ -1,0 +1,151 @@
+
+<div class="mini_gamemenu" style="{{GetAnim(1)}}">
+	<img src="img/sbox/logo.png"  class="logo">
+	<div class="first">
+		<ul >
+			<li style="{{GetAnim(0)}}">
+				
+				<a ng-href="#" ng-click="SwitchTab(1);"><img src="img/sbox/home.png" alt=""></a>
+			</li>
+			<li class="active" style="{{GetAnim(0)}}">
+				<a ng-href="#/newgame/" ng-click="SwitchTab(2);"><img src="img/sbox/games.png" alt=""></a>
+			</li>
+			<li style="{{GetAnim(0)}}">
+				<a ng-href="#/servers/" ng-click="SwitchTab(3);"><img src="img/sbox/servers.png" alt=""></a>
+			</li>
+			<li style="{{GetAnim(0)}}">
+				<a ng-href="#/addons/" ng-click="SwitchTab(4);"><img src="img/sbox/addons.png" alt=""></a>
+			</li>
+			<!-- <li style="{{GetAnim(0)}}">
+				<a ng-href="#/dupes/" ng-click="SwitchTab(5);"><img src="img/sbox/dublicate.png" alt=""></a>
+			</li> -->
+			<li ng-show="InGame" style="{{GetAnim(0)}}">
+				<a ng-click="MenuOption( this, 'engine disconnect');" ><img src="img/sbox/disconnect.png" alt=""></a>
+			</li>
+		</ul>
+		<ul class="second">
+			<li style="{{GetAnim(0)}}" >
+				<a ng-href="#" ng-click="SwitchTab(1); ToogleLang()"><img src="img/sbox/lang.png" alt=""></a>
+			</li>
+			<li style="{{GetAnim(0)}}">
+				<a ng-click="MenuOption( this, 'OpenOptionsDialog')"><img src="img/sbox/settings.png" alt=""></a>
+			</li>
+			<li style="{{GetAnim(0)}}">
+				<a ng-click="ToggleProblems()"><img src="img/sbox/tests.png" alt=""></a>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="exit_menu">
+	<img src="img/sbox/exit.png" alt="" ng-click="MenuOption( this, 'Quit')" ng-Tranny="'quit'">
+	<div class="party">
+		<img ng-src="asset://garrysmod/data/!sbox/avatar.jpg" class="avatar" alt="">
+		<img src="img/sbox/friends.png" alt="">
+		
+	</div>
+</div>
+
+
+
+
+
+
+<div class="page" ng-controller="ControllerNewGame">
+
+	<div class="create_menu">
+		<ul>
+			<h1>SERVER</h1>
+			<li><img class="avatar" ng-src="asset://garrysmod/data/!sbox/avatar.jpg" alt=""> your server</li>
+			<li ng-click ="SwitchMenu(1)" class="{{ IfElse( Menu == 1, 'chosen2','') }}"><img class="back2" src="img/sbox/servers.png" alt="">Server Settings</li>
+			<h1>GAMEMODE</h1>
+			<li ng-click ="SwitchMenu(2)" class="{{ IfElse( Menu == 2, 'chosen','') }}"><img  class="back" ng-src="asset://garrysmod/gamemodes/{{Gamemode}}/icon24.png" alt="">{{Gamemode}}</li>
+			<h1>MAP</h1>
+			<li ng-click ="SwitchMenu(3)" class="{{ IfElse( Menu == 3, 'chosen','') }}"><img class="back" ng-src="asset://mapimage/{{GetMapName()}}" alt="">{{GetActiveMap()}}</li>
+		</ul>
+			<!-- <img src="img/sbox/servers.png" alt=""> -->
+		<button ng-click="StartGame()"><img src="img/sbox/play.png" alt="">Start game</button>
+			<!-- <button ng-click="Tes()"></button> -->
+	</div>
+	
+
+	<!-- Settings category -->
+
+	<div class="settings" ng-show="Menu == 1">
+		
+		<h1>Server Settings</h1>
+		<ul>
+			<h2>SERVER SETUP</h2>
+			<li>BackUp<input type="text" name="" id="" placeholder="Not working ( need fix )"></li>
+			<h2>POPULATION</h2>
+			
+			<li>Max Players   
+				<div class="range">
+					<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+					<input type="range" style="background-size: {{Val}}% 100%;" step="1" value="{{Val}}" min="1" max="100" id="range" />
+					
+					
+					<input type="number" id="range_help" value="{{Val}}">
+				</div>
+			</li>
+		</ul>
+		
+	</div>
+
+	<!-- Gamemode category -->
+
+	<div class="maps" ng-show="Menu == 2">
+		
+		<ul class="category" >
+			<li id="none"></li>
+			<li  class = "{{GameModClass(mod.name)}} noisy" ng-repeat="(k,mod) in GetGamemodes()" ng-click="SelectGamemode(mod.name)">
+				<!-- <img ng-click="FavMap( map )" class="{{FavMapClass( map )}} {{FavMapHover( map )}}" src="" /> -->
+				<div class="mod_icon">
+					<img ng-click="" ng-src="img/sbox/image_back.png" class="thumbnail" />
+					<div class="mod_name">{{mod.title}}</div>
+				</div>
+				<!-- <span>{{MapIcon( map, category.category )}}</span> -->
+				<span>{{mod.title}}</span>
+			</li>
+
+		</ul>
+		
+	</div>
+
+	<!-- Maps category -->
+
+	<div class="maps" ng-show="Menu == 3">
+		
+		<ul class="category"  ng-repeat="category in MapList | orderBy:'order'" ng-hide="category.maps.length == 0" ng-show="CurrentCategory == category.category">
+			<li id="none"></li>
+			<li  class = "{{MapClass( map )}} noisy" ng-repeat="map in category.maps | orderBy:'toString()' | mapFilter:SearchText" ng-click="SelectMap( map )">
+				<!-- <img ng-click="FavMap( map )" class="{{FavMapClass( map )}} {{FavMapHover( map )}}" src="" /> -->
+					<div ng-click="ClickMap( map )" style="background: url({{MapIcon( map, category.category )}}); background-repeat:no-repeat; background-size: cover ; background-position:center;" class="thumbnail img" />
+				<span>{{MapIcon( map, category.category )}}</span>
+				<span>{{map}}</span>
+			</li>
+
+		</ul>
+		
+	</div>
+
+
+	<div class="context" ng-show="Menu != 1">
+		<div class="search">	
+			<input type="text" ng-model="SearchText" ng-tranny="'searchbar_placeholer'" autofocus>
+		</div>
+
+		<div class="category">
+			<h1>CATEGORY</h1>
+			<ul>
+				<li  class="noisy category {{IfElse( category.category == CurrentCategory, 'active', '' )}}" ng-repeat="category in MapList | orderBy:'order'" ng-hide="CountFiltered(category.maps) == 0" ng-click="SwitchCategory(category.category)">
+					<div class="name">
+						<img src="img/sbox/{{category.category}}.png" alt="">
+						<div class='text'>{{category.category}}</div>
+					</div>
+					<div>{{CountFiltered(category.maps)}}</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+</div>

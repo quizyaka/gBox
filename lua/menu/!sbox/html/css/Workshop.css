@@ -1,0 +1,776 @@
+.page .menu {
+	/* height: 100%; */
+	margin-left: 156px;
+	margin-top: 43px; 
+	margin-right: 103px;
+	/* background: red; */
+}
+
+.page .addons {
+	display: flex;
+	flex-direction: row;
+}
+
+.page .menu h1 {
+	all: unset;
+	margin-top: 38px;
+	color: white;
+	font-size: 60px;
+	font-weight: 700;
+	line-height: 93px;
+	letter-spacing: 0em;
+	text-align: left;
+}
+
+.page .menu .first_menu {
+	/* background: red; */
+	width: 401px; 
+	height: 421px;
+	/* background: red; */
+}
+
+.page .menu .first_menu h2 {
+	margin-top: 25px;
+	
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 154.5%;
+	letter-spacing: 0.055em;
+	color: #FFFFFF;
+}
+
+.page .menu .first_menu ul {
+	/* margin-top: 0; */
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* background: black; */
+}
+.page .menu .first_menu ul li {
+	font-style: normal;
+	cursor: pointer;
+	font-weight: 200;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 53px;
+	margin: 5px 10px 5px 0;
+	background: rgba(122, 137, 166, 0.1);
+	
+	/* width: 47%; */
+	border-radius: 4px;
+	transition: 0.5s;
+}
+
+.page .menu ul li:hover {
+	background: rgba(122, 137, 166, 0.15);
+}
+
+.page .menu .first_menu ul li a {
+	color: rgba(255, 255, 255, 0.5);
+	transition: 0.3s;
+}
+
+.page .menu .first_menu ul li.active {
+	background: #2E71EF;
+}
+
+.page .menu .first_menu ul li.active a {
+	
+	color:white;
+}
+
+.page .menu .first_menu input.search_bar {
+	padding-left: 18px;
+	height: 53px;
+	margin-top: 15px;
+	width: 391px;
+	background: rgba(122, 137, 166, 0.06);
+	border: 4px;
+	border-radius: 4px;
+	border: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.1em;
+	color: rgba(255, 255, 255, 0.15);
+	transition: 0.3s;
+}
+
+.page .menu .first_menu input::-webkit-input-placeholder { color: rgba(255, 255, 255, 0.15); }
+
+.page .menu .first_menu input.search_bar:focus {
+	background: rgba(135, 151, 182, 0.082);
+}
+
+.page .menu .second_menu {
+	/* display: flex; */
+	margin-top: 55px;
+	width: 401px; 
+	display: flex;
+	height: 100%;
+	max-height: 259px;
+	/* background: red; */
+}
+
+.page .menu .second_menu ul {
+	/* margin: 0; */
+	display: flex;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	flex-direction: row;
+	/* background: beige; */
+}
+.page .menu .second_menu li {
+	margin: 0;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	height: 53px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 10px 10px 0;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.page .menu .second_menu li.active {
+	background: #2E71EF;
+}
+
+
+.page .menu .second_menu li.active a {
+	color: white;
+}
+.page .menu .second_menu li a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transition: 0.3s;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	color: rgba(255, 255, 255, 0.5);
+
+}
+
+.addons .content {
+	margin-top: 87px;
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	/* background: blue; */
+	/* flex-wrap: wrap; */
+}
+
+.content .title {
+	display: flex;
+	flex-direction: row;
+	margin-left: 5px;
+	/* justify-content: center; */
+	align-items: center;
+}
+
+.content .title h2 {
+	color: white;
+	font-style: normal;
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 154.5%;
+	letter-spacing: 0.05em;
+	margin-right: 21px;
+}
+
+.content .title p {
+	color: rgba(255,255,255,0.5);
+	font-style: normal;
+	font-weight: 500;
+	font-size: 21px;
+	line-height: 154.5%;
+	letter-spacing: 0.05em;
+	margin-top: 5px;
+
+}
+
+/* workshopcontainer {} */
+
+/* workshopicon {
+	display: flex;
+	flex-direction: c;
+	width: 337.4px;
+	height: 235px;
+} */
+
+/* .content .addons {
+	margin-top: 48px;
+} */
+
+/* .content .addons ul {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+} */
+
+workshopcontainer::-webkit-scrollbar {
+	background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+	/* font-size: ; */
+}
+
+workshopcontainer::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+	width: 4px;
+}
+
+workshopcontainer {
+	display: flex;
+	margin-top: 48px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	max-width: 1086px;
+	height: 552px;
+	overflow-y:auto;
+	/* background: red; */
+	/* background: red; */
+	/* max-height: 100px; */
+}
+
+workshopicon {
+	display: flex;
+	/* flex-wrap: wrap; */
+	margin: 0 21px 41px 0;
+
+	width: 337.4px;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 235px;
+	border-radius: 15px;
+	color: white;
+}
+
+workshopicon .up_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 12px 19px 0 19px;
+	align-items: center;
+}
+
+workshopicon name {
+	/* background: red; */
+	width: 208px;
+}
+
+
+
+.up_list size {
+	background: #2E71EF;
+	width: 55.78px;
+	height: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 6px;	
+	font-style: lighter;
+	font-weight: 200;
+	font-size: 14px;
+	line-height: 154.5%;
+}
+
+.checkbox {
+	/* display: table; */
+	
+	
+	all: unset;
+	cursor: pointer;
+	/* padding-left: 2rem; */
+	position: relative;
+	top: -14;
+  }
+  .checkbox input[type="checkbox"] ~ .checkboxx {
+	position: absolute;
+	top: 1px;
+	margin-left: 9px;
+	left: 0;
+	width: 25px;
+	height: 25px;
+	background: #f9f1f1;
+	/* transition: background 250ms; */
+	border: none;
+	border-radius: 0.2rem;
+  }
+.checkbox input[type="checkbox"]:checked ~ .checkboxx::after {
+	content: "";
+	position: absolute;
+	display: flex;
+	left: 10px;
+	top: 7px;
+	width: 4px;
+	height: 8px;
+	border: solid #ffffff;
+	border-width: 0 2px 2px 0;
+	transition: background 250ms;
+	transform: rotate(45deg);
+}
+.checkbox input:checked ~ .checkboxx::after {
+	display: block;
+}
+.checkbox:hover input[type="checkbox"]:not([disabled]) ~ .checkboxx,
+.checkbox input[type="checkbox"]:focus ~ .checkboxx {
+	background: rgba(82, 91, 106, 0.2);
+	border: 1px solid rgba(149, 162, 185, 0.19);
+	backdrop-filter: blur(1.5px);
+	border-radius: 5px;
+  
+}
+.checkbox input[type="checkbox"]:not([disabled]) ~ .checkboxx,
+.checkbox input[type="checkbox"]:focus ~ .checkboxx {
+	background: rgba(82, 91, 106, 0.2);
+	border: 1px solid rgba(149, 162, 185, 0.19);
+	backdrop-filter: blur(1.5px);
+	border-radius: 5px;
+}
+.checkbox input[type="checkbox"]:checked ~ .checkboxx {
+	background: #3472E6;
+}
+.checkbox:hover input[type="checkbox"]:not([disabled]):checked ~ .checkboxx,
+.checkbox input[type="checkbox"]:checked:focus ~ .checkboxx {
+	background: #2563eb;
+}
+
+workshopicon name label {
+	font-style: normal;
+	font-weight: 200;
+	font-size: 18px;
+	line-height: 154.5%;
+}
+
+workshopicon .down_list {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin: 0 19px 20px 19px;
+}
+
+workshopicon .down_list .rating {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 25px;
+	background: #2E71EF;
+	border-radius: 6px;
+	padding: 2px 8px 2px 8px;
+}
+
+workshopicon .down_list .author {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 8px 2px 8px;
+	height: 25px;
+	background: #2E71EF;
+	border-radius: 6px;
+}
+
+
+
+
+.menu .tabs_chose {
+	width: 387px;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	/* justify-content: center; */
+	align-items: center;
+	margin-top: 17px;
+
+}
+
+
+.menu .tabs_chose a.go {
+	width: 53px;
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	height: 53px;
+}
+
+.menu .tabs_chose a.back {
+
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	background: blue;
+	width: 53px;
+	height: 53px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+}
+
+.menu .tabs_chose .tabs::-webkit-scrollbar {
+	background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+	/* font-size: ; */
+}
+
+.menu .tabs_chose .tabs::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+	width: 4px;
+}
+
+.menu .tabs_chose .tabs{
+	display: flex;
+	/* background: red; */
+	width: 258px;
+	/* justify-content: center; */
+	align-items: center;
+	margin: 0 6px 0 6px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 55px;
+	overflow-y: auto;
+}
+
+.menu .tabs_chose .tabs span {
+	padding: 3px 3px 3px 3px;
+
+}
+
+.menu .tabs_chose .chose {
+	display: flex;
+}
+
+.menu .tabs_chose .tabs span a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 16px;
+	width: 16px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	transition: 0.3s;
+}
+
+.menu .tabs_chose .tabs span a.active {
+	background: rgba(122, 137, 166, 0.21);
+}
+
+/*  RADIO CHEBOX  */
+
+
+
+
+.b-contain input {
+	
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  margin: 0;
+}
+
+.b-contain span {
+	
+  line-height: 1.5;
+  font-size: 1rem;
+  /* font-family: inherit; */
+}
+
+.b-contain {
+	
+  display: table;
+  position: relative;
+  /* padding-left: 2rem; */
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+
+.b-contain input[type="checkbox"] ~ .inp_in {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 21px;
+  height: 21px;
+  background: #f9f1f1;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+
+
+
+.b-contain input[type="checkbox"]:checked ~ .inp_in::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 8px;
+  top: 5px;
+  width: 0.225rem;
+  height: 0.45rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+
+
+.b-contain input:checked ~ .inp_in::after {
+	
+  display: block;
+}
+
+.b-contain:hover input[type="checkbox"]:not([disabled]) ~ .inp_in,
+.b-contain input[type="checkbox"]:focus ~ .inp_in {
+  background: rgba(122, 137, 166, 0.2);
+  
+
+}
+
+.b-contain input[type="checkbox"]:not([disabled]) ~ .inp_in,
+.b-contain input[type="checkbox"]:focus ~ .inp_in {
+	
+  background: rgba(122, 137, 166, 0.1);
+}
+
+.b-contain input[type="checkbox"]:checked ~ .inp_in {
+  background: #3472E6;
+}
+
+
+.b-contain:hover input[type="checkbox"]:not([disabled]):checked ~ .inp_in,
+.b-contain input[type="checkbox"]:checked:focus ~ .inp_in {
+  background: #2563eb;
+}
+
+
+/* RADIO  */
+
+.b-contain input[type="radio"] ~ .inp_in {
+  position: absolute;
+  
+  top: 0;
+  left: 0;
+  width: 21px;
+  height: 21px;
+  background: #f9f1f1;
+  transition: background 250ms;
+  border: none;
+  border-radius: 0.2rem;
+}
+
+
+
+
+.b-contain input[type="radio"]:checked ~ .inp_in::after {
+  content: "";
+  position: absolute;
+  display: flex;
+  left: 8px;
+  top: 5px;
+  width: 0.225rem;
+  height: 0.45rem;
+  border: solid #ffffff;
+  border-width: 0 2px 2px 0;
+  transition: background 250ms;
+  transform: rotate(45deg);
+}
+
+
+.b-contain:hover input[type="radio"]:not([disabled]) ~ .inp_in,
+.b-contain input[type="radio"]:focus ~ .inp_in {
+  background: rgba(122, 137, 166, 0.2);
+
+}
+
+.b-contain input[type="radio"]:not([disabled]) ~ .inp_in,
+.b-contain input[type="radio"]:focus ~ .inp_in {
+  background: rgba(122, 137, 166, 0.1);
+}
+
+.b-contain input[type="radio"]:checked ~ .inp_in {
+  background: #3472E6;
+}
+
+
+.b-contain:hover input[type="radio"]:not([disabled]):checked ~ .inp_in,
+.b-contain input[type="radio"]:checked:focus ~ .inp_in {
+  background: #2563eb;
+}
+
+/*  ENDD */
+
+.menu .tabs_chose span.stat {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	line-height: 154.5%;
+	color: white;
+}
+
+.content .other {
+	width: 1056px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 8px;
+	height: 216px;
+	margin-top: 5px;
+	z-index: 101;
+}
+
+.content .other .tabs {
+	display: flex;
+	flex-direction: row;
+	margin: 15px 0 0 24px;
+}
+
+.content .other .tabs .filters {
+	width: 277px;
+}
+
+
+
+.content .other .tabs .sorts {
+	width: 228px;
+}
+
+.content .other .tabs h3 {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 18px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	color: #FFFFFF;
+	margin-bottom: 15px;
+}
+
+.content .other .tabs li label {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.05em;
+	/* margin-left: 16px; */
+	color: #FFFFFF;
+}
+
+.content .other .tabs li {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-top: 3px;
+	/* background: beige; */
+	margin-right: 37px;
+}
+
+.content .other .tabs .select {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+
+.content .other .tabs .select a {
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	width: 160px;
+	margin-bottom: 8.23px;
+	height: 37.77px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.select .modaldialog {
+	background: rgba(0, 0, 0, 0.6);
+	backdrop-filter: blur(3px) saturate(180%);
+    -webkit-backdrop-filter: blur(3px) saturate(180%);
+}
+
+.select .modaldialog .centermessage {
+	background: rgb(24, 31, 43);
+	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	color: rgba(255, 255, 255, 0.5);
+	
+}
+
+.select .modaldialog .centermessage span {
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.05em;
+	color: #FFFFFF;
+
+}
+
+.content .other .tabs .create {
+	display: flex;
+	flex-direction: column;
+	margin-left: 38px;
+}
+
+.content .other .tabs .create .btns {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 15px;
+}
+
+.content .other .tabs .create .btns a {
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 4px;
+	width: 214px;
+	margin-bottom: 8.23px;
+	height: 37.77px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.content .other .tabs .create .stats {
+	display: flex;
+	flex-direction: column;
+}
+
+.content .other .tabs .create .stats span {
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.005em;
+	color: white;
+	margin-bottom: 4px;
+}

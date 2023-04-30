@@ -1,0 +1,101 @@
+
+
+	<div class="gamemenu" style="{{GetAnim(1)}}">
+		<img src="img/sbox/logo.png"  class="logo">
+		<div class="first" >
+			<ul >
+			<!-- <li><button ng-click="ToggleLanguage()">da</button></li> -->
+				<li class="active" style="{{GetAnim(0)}}">
+					<img src="img/sbox/home.png" alt="">
+					<a ng-Tranny="'home'"></a>
+					
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<img src="img/sbox/games.png" alt="">
+					<a ng-href="#/newgame/" ng-click="SwitchTab(2);"  ng-Tranny="'n_g'"></a> <!-- ng-Tranny="'new_game'" -->
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<img src="img/sbox/servers.png" alt="">
+					<a ng-href="#/servers/" ng-click="SwitchTab(3);" ng-Tranny="'sl'" ></a> <!-- ng-Tranny="'find_mp_game'" -->
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<img src="img/sbox/addons.png" alt="">
+					<a ng-href="#/addons/" ng-click="SwitchTab(4);" ng-Tranny="'ad'"></a> <!-- ng-Tranny="'addons'" -->
+				</li>
+				<!-- <li style="{{GetAnim(0)}}">
+					<img src="img/sbox/dublicate.png" alt="">
+					<a ng-href="#/dupes/" ng-click="SwitchTab(5);" ng-Tranny="'db'"></a> 
+				</li> -->
+				<li ng-show="InGame" style="{{GetAnim(0)}}">
+					<img src="img/sbox/disconnect.png" alt="">
+					<a ng-click="MenuOption( this, 'engine disconnect');" ng-Tranny="'disconnect'"></a>
+				</li>
+			</ul>
+			<ul class="second">
+				<li style="{{GetAnim(0)}}" id="langid" ng-click="ToogleLang()">
+					<img src="img/sbox/lang.png" alt="" ng-hide="ShowLang">
+					<a ng-Tranny="'lang'" ng-hide="ShowLang"></a>
+					<ul ng-show="ShowLang">
+						<li ng-repeat="(lang,flag) in SupportLang" ng-click="ChangeLang(lang)"><img src="{{flag}}" alt=""></li>
+					</ul>
+				</li>
+				<li style="{{GetAnim(0)}}" ng-click="AboutSwitch()">
+					<img src="img/sbox/streaming.png" alt="">
+					<a ng-Tranny="'soc'"></a>
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<img src="img/sbox/settings.png" alt="">
+					<a ng-click="MenuOption( this, 'OpenOptionsDialog')" ng-Tranny="'set'"></a>
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<img src="img/sbox/tests.png" alt="">
+					<a  ng-click="ToggleProblems()" ng-Tranny="'er'"></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<img src="img/sbox/man2.png" ng-show='!InGame' alt="" class="person">
+
+	<div class="news" ng-show="!InGame">
+		<ul>
+			<li ng-repeat="(k,pnl) in GetNews() " ng-click="OpenUrl(pnl.link)">
+				<img ng-src="{{pnl.img}}" alt=""> 
+				<div class="info">
+					<img ng-src="{{pnl.avatar}}" alt="" class="avatar">
+					<div class="text">
+						<h3>{{pnl.title}}</h3>
+						<p>{{pnl.text}}</p>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+	
+	
+	<div class="exit_menu">
+	<img src="img/sbox/exit.png" alt="" ng-click="MenuOption( this, 'Quit')" ng-Tranny="'quit'">
+	<div class="party">
+		<img ng-src="asset://garrysmod/data/!sbox/avatar.jpg" class="avatar" alt="">
+		<img src="img/sbox/friends.png" alt="">
+	</div>
+
+	<div class="AbousUs" ng-show="About">
+		<div class="content">
+			<h1>g&box⠀<span>team</span></h1>
+			<p ng-Tranny="'ab.text'">g&box - изменяет визуальную часть игры. Полностью вдохновлен новым проектом Гарри Ньюмана s&box. Проект имеет открытый исходным код, благодаря этому ты можешь быть уверен в своей безопасности.</p>
+			<div class="info">
+				<a ng-click="OpenUrl('https://www.youtube.com/channel/UCstft8Myy8Yfc9pOP2AtaFg')">Code: <span>quiz#9689</span></a>
+			</div>
+			<div class="info">
+				<a ng-click="OpenUrl('https://discord.gg/Z2n7yHXPna')">Design: <span>F0D1#8188</span></a>
+			</div>
+
+			<div class="info">
+				<a ng-click="OpenUrl('https://discord.gg/F4cNw5XyWw')"><span>discord</span></a>
+			</div>
+			<button ng-click="AboutSwitch()" ng-Tranny="'ab.close'"></button>
+		</div>
+	</div>
+</div>
+
+

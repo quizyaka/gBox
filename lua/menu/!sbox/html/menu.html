@@ -1,0 +1,75 @@
+<html>
+<head>
+
+	<title>Garry's Mod Main Menu</title>
+
+	<link rel="stylesheet" type="text/css" href="css/menu/Menu.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/NavBar.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/PageOptions.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/NewGame.css" />
+	<link rel="stylesheet" type="text/css" href="css/menu/Servers.css" />
+	<link rel="stylesheet" type="text/css" href="css/Workshop.css" />
+
+	<link rel="stylesheet" href="css/sbox/menu.css">
+
+
+	<script type="text/javascript" src="js/lua.js"></script>
+
+	<script type="text/javascript" src="js/thirdparty/jquery.js"></script>
+	<script type="text/javascript" src="js/thirdparty/jquery-color.js"></script>
+	<script type="text/javascript" src="js/thirdparty/angular.js"></script>
+	<script type="text/javascript" src="js/thirdparty/angular-ui.js"></script>
+
+	<script type="text/javascript" src="js/menu/WorkshopFiles.js"></script>
+	<script type="text/javascript" src="js/menu/Subscriptions.js"></script>
+	<script type="text/javascript" src="js/menu/menuApp.js?2"></script>
+	<script type="text/javascript" src="js/menu/control.Menu.js?2"></script>
+	<script type="text/javascript" src="js/menu/control.Main.js?2"></script>
+	<script type="text/javascript" src="js/menu/control.NewGame.js"></script>
+	<script type="text/javascript" src="js/menu/control.Servers.js"></script>
+	<script type="text/javascript" src="js/menu/control.Addons.js"></script>
+	<script type="text/javascript" src="js/menu/control.Demos.js"></script>
+	<script type="text/javascript" src="js/menu/control.Saves.js"></script>
+	<script type="text/javascript" src="js/menu/control.Dupes.js"></script>
+
+	<script type="text/javascript" src="js/svc.Tranny.js"></script>
+
+	<script type="text/javascript" src="js/menu/TestData.js"></script>
+	<script type="text/javascript" src="js/menu/TestServers.js"></script>
+	<script type="text/javascript" src="js/menu/TestWorkshop.js"></script>
+	<style>
+		@font-face {
+			font-family: "Gilroy Medium";
+			src: url("asset://garrysmod/lua/menu/!sbox/html/font/Gilroy-Regular.ttf") format("truetype");
+
+			font-style: normal; 
+		}
+	</style>
+</head>
+
+
+
+<body ng-app="MenuApp" ng-controller="MenuController" id="rootApp" style="{{GetGame()}}">
+	
+	
+
+	<script src="js/sbox/menu.js"></script>
+
+<div ng-show="CheckUpdate()" class="update">
+	<span ng-click="OpenUrl('https://discord.gg/F4cNw5XyWw')">
+		A new update is out! Click to go to download
+	</span>
+</div>
+<div id="version" ng-click="ShowNews()" ng-show="Branch"><span ng-show="Branch != 'unknown'">You are on the {{Branch}} branch. Click here to find out more. ( </span>{{Version}}<span ng-show="Branch != 'unknown'"> )</span></div>
+
+<div ng-view>
+
+</div>
+
+
+
+<div id="news_list" class=''></div>
+
+
+</body>
+</html>

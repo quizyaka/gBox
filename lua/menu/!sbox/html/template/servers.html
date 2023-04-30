@@ -1,0 +1,267 @@
+	<div class="mini_gamemenu" style="{{GetAnim(1)}}">
+		<img src="img/sbox/logo.png"  class="logo">
+		<div class="first">
+			<ul >
+				<li style="{{GetAnim(0)}}">
+					
+					<a ng-href="#" ng-click="SwitchTab(1);"><img src="img/sbox/home.png" alt=""></a>
+				</li>
+				<li  style="{{GetAnim(0)}}">
+					<a ng-href="#/newgame/" ng-click="SwitchTab(2);"><img src="img/sbox/games.png" alt=""></a>
+				</li>
+				<li class="active" style="{{GetAnim(0)}}">
+					<a ng-href="#/servers/"  ng-click="SwitchTab(3);"><img src="img/sbox/servers.png" alt=""></a>
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<a ng-href="#/addons/" ng-click="SwitchTab(4);"><img src="img/sbox/addons.png" alt=""></a>
+				</li>
+				<!-- <li style="{{GetAnim(0)}}">
+					<a ng-href="#/dupes/" ng-click="SwitchTab(5);"><img src="img/sbox/dublicate.png" alt=""></a>
+				</li> -->
+				<li ng-show="InGame" style="{{GetAnim(0)}}">
+					<a ng-click="MenuOption( this, 'engine disconnect');"><img src="img/sbox/disconnect.png" alt=""></a>
+				</li>
+			</ul>
+			<ul class="second">
+				<li style="{{GetAnim(0)}}">
+					<a ng-href="#" ng-click="SwitchTab(1); ToogleLang()"><img src="img/sbox/lang.png" alt=""></a>
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<a ng-click="MenuOption( this, 'OpenOptionsDialog')"><img src="img/sbox/settings.png" alt=""></a>
+				</li>
+				<li style="{{GetAnim(0)}}">
+					<a ng-click="ToggleProblems()"><img src="img/sbox/tests.png" alt=""></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="exit_menu">
+		<img src="img/sbox/exit.png" alt="" ng-click="MenuOption( this, 'Quit')" ng-Tranny="'quit'">
+		<div class="party">
+			<img ng-src="asset://garrysmod/data/!sbox/avatar.jpg" class="avatar" alt="">
+			<img src="img/sbox/friends.png" alt="">
+			
+		</div>
+	</div>
+
+
+	
+
+<div class="page" ng-controller="ControllerServers">
+
+	<div class="menu_list">
+		<h1 ng-Tranny="'sl.title'"></h1>
+		<ul class="info">
+			<li>{{ServerCount[ ServerType ]}} servers total</li>
+			<li>{{GamemodeList.length}} gamemodes total</li>
+		</ul>
+
+		<ul class="context_btn">
+			<li class="{{IfElse( ServerType == 'internet', 'active', '' )}}" ng-click="SwitchType( 'internet' )" ng-Tranny="'sl.cat1'"></li>
+			<li class="{{IfElse( ServerType == 'favorite', 'active', '' )}}" ng-click="SwitchType( 'favorite' )" ng-Tranny="'sl.cat2'"></li>
+			<li class="{{IfElse( ServerType == 'history', 'active', '' )}}" ng-click="SwitchType( 'history' )" ng-Tranny="'sl.cat3'"></li>
+			<li class="{{IfElse( ServerType == 'lan', 'active', '' )}}"     ng-click="SwitchType( 'lan' )" ng-Tranny="'sl.cat4'"></li>
+			<!-- <li ng-show="( CurrentGamemode == null && Refreshing[ ServerType ] == 'false' ) || (Refreshing[ ServerType ] == 'true')">Обновить сервера</li> -->
+			<li ng-hide=" Refreshing[ ServerType ] == 'true' || CurrentGamemode" ng-click="Refresh()" ng-Tranny="'sl.cat5'"></li>
+			<li ng-hide="Refreshing[ ServerType ] == 'false'" ng-click="DoStopRefresh()" ng-Tranny="'sl.cat6'"></li>
+			<li ng-click="MenuOption( this, 'OpenServerBrowser')" ng-Tranny="'sl.cat7'"></li>
+		</ul>
+
+		<div class="sort_panel">
+			<div class="panel" ng-hide="CurrentGamemode == null">
+				<h2 ng-Tranny="'sl.sort.t2'"></h2>
+				<ul >
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t2.1'"></span> 
+							<input name="radio" type="radio" value="-(num_servers)" ng-click="ChangeOrder( CurrentGamemode, '-players' )"/>
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t2.2'"></span>
+							<input name="radio" type="radio" value="-(num_servers)" ng-click="ChangeOrder( CurrentGamemode, 'ping' )"/>
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t2.3'"></span>
+							<input name="radio" type="radio" value="-(num_servers)" ng-click="ChangeOrder( CurrentGamemode, 'name' )" />
+							<div class="b-input"></div>
+						 </label>
+					</li>
+				</ul>
+
+				<h2 style="margin-top:30px;" ng-Tranny="'sl.sort.t3'"></h2>
+				<ul>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t3.1'"></span>
+							<input type="checkbox" ng-model="SVFilterNotFull" />
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t3.2'"></span>
+							<input type="checkbox" ng-model="SVFilterHasPly" />
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t3.3'"></span>
+							<input type="checkbox" ng-model="SVFilterHidePass" />
+							<div class="b-input"></div>
+						</label>
+					</li>
+				</ul>
+			</div>
+
+			<div class="panel" ng-hide="CurrentGamemode != null">
+				<h2 ng-Tranny="'sl.sort.t1'"></h2>
+				<ul >
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t1.1'"></span> 
+							<input name="radio" type="radio"   value="ChangeOrder( CurrentGamemode, '-players' )" ng-model="GMSort"/>
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t1.2'"></span>
+							<input name="radio" type="radio" value="-(num_servers)" ng-model="GMSort" />
+							<div class="b-input"></div>
+						</label>
+					</li>
+					<li>
+						<label class="b-contain">
+							<span ng-Tranny="'sl.sort.t1.3'"></span>
+							<input name="radio" type="radio" value="info.title" ng-model="GMSort" />
+							<div class="b-input"></div>
+						 </label>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="gamemodes_list" ng-hide="CurrentGamemode != null">
+		<!-- {{Test()}} -->
+		<div class="info">
+			
+			<h1 ng-Tranny="'sl.subtitle'"></h1>
+			<p ng-Tranny="'sl.info1'"></p>
+		</div>
+		<div class="gamemodes">
+			<ul>
+				<li ng-repeat="gamemode in GamemodeList  | filter: gamemodeFilter | orderBy:[GMSort, '-(num_players)', 'name' ]" ng-click="SelectGamemode( gamemode )"> 
+					<div class="mod">
+						<div class="mod_logo">
+							<img ng-src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/gamemodes/{{GetTypeLogo(gamemode.name)}}" >
+							<!-- <img ng-src="../img/sbox/gamemodes/{{GetTypeLogo(gamemode.name)}}" > -->
+								
+						</div>
+						<div class="mod_info">
+							
+							<!-- <p>{{gamemode.name}}</p>  -->
+							<p style="{{PrettyFont(GamemodeName(gamemode))}}">{{GamemodeName(gamemode)}}</p>
+							<p class="type" style="background: {{Type.color[GetType(gamemode.name)]}};">{{GetType(gamemode.name)}}</p>
+						</div>
+						
+					</div>
+					<div class="pl_info">
+						<p>{{gamemode.num_players}}</p>
+						<p ng-Tranny="'sl.players'"></p>	
+						<p>{{gamemode.num_servers}}</p>
+						<p ng-Tranny="'sl.servers'"></p>
+					</div>
+				</li>
+			</ul>
+		</div>		
+	</div>
+
+	<div class="servers_list" ng-hide="CurrentGamemode == null">
+		<div class="info">
+			<h1 ng-Tranny="'sl.subtitle2'"></h1>
+			<p ng-click="SelectGamemode(null)" ng-Tranny="'sl.info2'"></p>
+			<input type="text" ng-model="CurrentGamemode.Search" ng-Tranny="'sl.input'" spellcheck="false" />
+		</div>
+		<div class="servers">
+			
+			<div ng-show="InfoMenu" class="server_info" ng-click="InfoMenu = false">
+				<div class="content">
+					<h1>{{CurrentGamemode.Selected.name}}</h1>
+					<div class="player_list">
+						<!-- {{CurrentGamemode.Selected.playerlist}} -->
+						<ul>
+							<li ng-repeat="p in CurrentGamemode.Selected.playerlist">
+								<div class="row">
+									<p ng-Seconds="p.time" ></p>
+									<p style="display: flex; justify-content: center; align-items: center;">{{p.name}}</p>
+									<p>{{p.score}}</p>
+								</div>
+							</li>
+						</ul>
+					</div>
+					<div class="context" ng-click="JoinServer( CurrentGamemode.Selected )">
+						<p ng-Tranny="'sl.connect'">Подключиться</p>
+					</div>
+					<!-- <tr ng-repeat="player in CurrentGamemode.Selected.playerlist|orderBy:'time'">
+						<td class="pname">{{player.name}}</td>
+						<td style="text-align: center;">{{player.score}}</td>
+						<td style="text-align: right;" ng-Seconds="player.time"></td>
+					</tr> -->
+					
+				</div>
+			</div>
+
+			<ul>		
+				<!-- ng-click="SelectServer(server,$event); JoinServer( CurrentGamemode.Selected )" -->
+				<li ng-repeat="server in CurrentGamemode.servers | orderBy: CurrentGamemode.OrderBy : CurrentGamemode.OrderReverse | filter: serverFilter | startFrom : CurrentGamemode.server_offset | limitTo : ServersPerPage"
+				
+				ng-click=" SelectServer(server,$event); OpenServerInfo(server); "
+				class="{{IfElse(server.players == 0, 'no_pl','')}}"> 
+				
+
+					<div class="flag">
+						<img ng-src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/flags/{{GetFlag(server.flag)}}.png">
+					</div>
+					<div class="server_name" style="font-size: {{ServerFont(server)}}px;">{{server.name}}</div>
+					<div class="players_info">
+						<p>{{server.players}} </p>
+						<p class="transp">/{{server.maxplayers}}</p>
+					</div>
+					<div class="ping_info">
+			
+						<div class="ping_icon">
+							<svg id="svg" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M2.25515 12.4844C1.63205 12.4844 1.07248 12.7363 0.661654 13.1459V13.1455C0.251925 13.5559 0 14.1153 0 14.737C0 15.3581 0.251925 15.9155 0.661654 16.3252C1.07248 16.735 1.63205 16.9858 2.25515 16.9858C2.87903 16.9858 3.44032 16.7358 3.85052 16.3264L3.85223 16.3253C4.26228 15.9156 4.5128 15.3578 4.5142 14.7372C4.5128 14.1155 4.26228 13.5577 3.85052 13.1463C3.43923 12.7369 2.87903 12.4844 2.25515 12.4844Z" fill="{{Ping(server.ping).clr[0]}}" fill-opacity="{{Ping(server.ping).trans[0]}}"/>
+								<path d="M12.0069 4.98953C8.92983 1.90891 4.68894 0.001875 0.00756836 0V3.24625C7.5778 3.25125 13.7317 9.42109 13.7372 17.0066H16.9889C16.9866 12.3183 15.0833 8.07078 12.0069 4.98953Z"  fill="{{Ping(server.ping).clr[2]}}" fill-opacity="{{Ping(server.ping).trans[2]}}"/>
+								<path d="M0.00170898 5.78265V9.03031C2.11935 9.03156 4.12273 9.86422 5.62148 11.367C7.12023 12.8648 7.94874 14.873 7.95202 17.0008H7.95327V17.0066H11.2103C11.2077 13.9133 9.9515 11.1114 7.92096 9.07703C5.88979 7.04312 3.09193 5.78484 0.00170898 5.78265Z" fill="{{Ping(server.ping).clr[1]}}" fill-opacity="{{Ping(server.ping).trans[1]}}"/>
+							</svg>
+						</div>
+						<p>{{server.ping}}ms</p>
+
+					</div>
+					<div class="help_btn">
+						<div class="lock">
+							<img ng-src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/lock.png"ng-show="server.pass">
+						</div>
+						<div class="fav_toggle">
+							<img src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/star.png" ng-click="ToggleFavorite( server );$event.stopPropagation();" ng-show="!server.favorite">
+							<img src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/star_active.png" style="opacity: 1;" ng-click="ToggleFavorite( server );$event.stopPropagation();" ng-show="server.favorite">
+						</div>
+						<p class="open_info" style="margin-bottom: 8px;" ng-click="">...</p>
+					</div>
+					
+				</li>
+			</ul>
+		</div>		
+	</div>
+	
+
+</div>

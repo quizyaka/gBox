@@ -1,0 +1,464 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.logo {
+    position: absolute;
+    height: 100px;
+    top: 0;
+    /* left: 30%; */
+
+}
+
+@keyframes open_back {
+    0% {
+      width: 100px;
+    }
+    100% {
+      width: 350px;
+    }
+  }
+
+@keyframes open_btn {
+  0% {
+      margin-left: 20px;
+      width: 80px;
+    
+  }
+  100% {    
+    width: 310px;
+  }
+}
+
+@keyframes close_back {
+    0% {
+        /* width: 350px; */
+        padding-right: 250px;
+      
+    }
+    100% {
+        padding-right: 0;
+    }
+  }
+
+@keyframes close_btn {
+  0% {
+    padding-right: 250px;
+    margin-left: 250px;
+  }
+  100% {
+    padding-right: 0;
+    margin-right: 0;
+  }
+}
+
+.gamemenu {
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    position: fixed;
+    width: 350px;
+    height: 100vh;
+    background-color: #0e0f14;
+    z-index: 999;
+}
+
+#news_list {
+    background: none;
+    background: red;
+    height: 0;
+    width: 0;
+
+}
+ 
+.first {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* .language_panel {
+    background: red;
+} */
+
+.first ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    /* margin-top: -60px; */
+    margin-top: 87px;
+
+    align-items: center;
+}
+
+.gamemenu .first ul li {
+    /* animation-name: open_btn; */
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+
+    width: 310px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 2px;
+    height: 60px;
+    border-radius: 0.4em;
+    transition: 0.5s;
+}
+
+.first ul li:hover {
+    background: #1c1f27;
+}
+
+.first ul li.active:hover {
+    background: #3472e6;
+}
+
+ ul.second {
+    padding-bottom: 15px;
+}
+
+ .active {
+    background: #3472e6;
+    color: white;
+    
+}
+
+ li.active img {
+    filter: invert(100%); 
+    -webkit-filter: invert(0);
+}
+
+
+
+.gamemenu .first li.active a {
+    color: white;
+    /* padding-left: 0.875rem; */
+    font-size: 19px;
+    top: 100px;
+    text-decoration: none;
+}
+.gamemenu .first ul li a {
+    padding-left: 14px;
+    font-size: 19px;
+    top: 100px;
+    text-decoration: none;
+    color: #7f8186;
+    padding-right: 100px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    white-space: nowrap;
+    
+}
+
+.update {
+    position: absolute;
+    width: 100vw;
+    height: 25px;
+    background: #3472e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    color: white;
+    cursor: pointer;
+}
+
+li img {
+
+    padding-left: 0.875rem;
+    vertical-align: center;
+    height: 2rem;
+    filter: invert(100%); 
+    -webkit-filter: invert(50%);
+    
+    /* filter: invert(100%); */
+}
+
+.exit_menu {
+    z-index: 999;
+    top: 0;
+    position: fixed;
+    right: 0;
+    width: 6.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    background-color: #0e0f14;
+}
+.exit_menu img {
+    filter: invert(100%); 
+    -webkit-filter: invert(50%);
+    height: 2rem;
+    width: 2rem;
+    margin-top: 2rem;
+    /* margin-left: 35%; */
+    transition: 0.3s;
+}
+.exit_menu img:hover {
+    box-shadow: white;
+    filter: invert(100%); 
+    -webkit-filter: invert(0);
+    -webkit-box-shadow: 0px 0px 27px 6px rgba(0, 94, 167, 0.2);
+    -moz-box-shadow: 0px 0px 27px 6px rgba(0, 94, 167, 0.2);
+    box-shadow: 0px 0px 27px 6px rgba(0, 94, 167, 0.2);
+}
+
+.person {
+    height: 880px;
+    margin-left: 23.5rem;
+    margin-top: 9rem;
+    /* background: red; */
+}
+
+.news {
+    position: absolute;
+    left: 44.531vw;
+    top: 6.481481481481481vh;
+    /* background: red; */
+    width: 49vw;
+    height: 91vh;
+    overflow-y: auto;
+} 
+
+.news::-webkit-scrollbar {
+    background: rgba(122, 137, 166, 0.1);
+	width: 4px;
+	border-radius: 3.5px;
+}
+
+.news::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.13);
+	border-radius: 3.5px;
+	width: 4px;
+}
+
+.news ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-between; */
+
+}
+
+.news li {
+    /* background: blue;  */
+    cursor: pointer;
+    width: 289px;
+    height: 245px;
+    /* background: green; */
+    margin-right: 20px;
+
+}
+
+.news img {
+    all: unset;
+    width: 100%;
+    height: 160px;
+    /* background: blue; */
+    object-fit: cover;
+
+    border-radius: 3px;
+}
+
+.news h3 {
+    /* padding-left: 48px; */
+    font-size: 13px;
+    letter-spacing: 1px;
+    padding-top: 8px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.news p {
+    /* padding-left: 48px; */
+    all: unset;
+    font-weight: 800;
+    color: #666664;
+    font-size: 12px;
+}
+
+.news .info {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin-top: 4px;
+    /* background: red; */
+}
+
+.info .text {
+    padding-left: 16px;
+}
+
+.news .avatar {
+    height: 32px;
+    width: 32px;
+    border-radius: 100%;
+}
+
+.info_content {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+
+.party {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 35px;
+    /* background: red; */
+    
+}
+
+.party img {
+    margin-top: 20px;
+}
+
+.party .avatar {
+    all: unset;
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+    border-radius: 100%;
+    border:solid #2b2b2b 1px;
+}
+
+/* FOR GAMEMENU_MINI */
+
+.mini_gamemenu {
+    position: fixed;
+    /* animation-name: close_back; */
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+    /* animation-timing-function: linear; */
+    width: 100px;
+    height: 100vh;
+    background-color: #0e0f14;
+    z-index: 999;
+}
+
+.mini_gamemenu .first {
+    display: flex;
+    /* background: red; */
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mini_gamemenu .first ul {
+    display: flex;
+    justify-content: center;
+}
+
+.mini_gamemenu .first ul li {
+    animation-duration: 0.5s;
+    animation-iteration-count: 1;
+
+    margin-left: 0rem;
+    width: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    margin-top: 2px;
+    height: 60px;
+    border-radius: 0.4em;
+    transition: 0.5s;
+}
+
+.mini_gamemenu .first ul li a {
+    position: absolute;
+    padding: 20px 25px 20px 25px;
+}
+
+a img {
+    padding-left: 0;
+    vertical-align: center;
+    height: 2rem;
+    filter: invert(100%); 
+    -webkit-filter: invert(50%);
+} 
+
+
+.AbousUs {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AbousUs .content {
+    height: 70vh;
+    width: 60vw;
+    backdrop-filter: blur(9px) saturate(102%);
+    -webkit-backdrop-filter: blur(9px) saturate(102%);
+    background-color: rgba(17, 25, 40, 0.29);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between ;
+    align-items: center;
+    padding: 5vh;
+}
+
+.AbousUs h1 {
+    /* all: unset; */
+    color: #3472e6;
+    font-size: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    /* margin-top: 5vh; */
+}
+
+.AbousUs span {
+    color: white;
+}
+
+.AbousUs .info span {
+    color: #3472e6;
+}
+
+.AbousUs p {
+    padding: 5vh;
+    /* margin-top: 5vh; */
+    font-size: 24px;
+    text-align: center;
+}
+
+.AbousUs a {
+    padding: 5vh;
+    /* margin-top: 5vh; */
+    font-size: 24px;
+    text-align: center;
+    color: white;
+
+}
+
+.AbousUs button {
+    background: #3472e6;
+    border-radius: 0.4em;
+    height: 70px;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 18px;
+    cursor: pointer;
+}
