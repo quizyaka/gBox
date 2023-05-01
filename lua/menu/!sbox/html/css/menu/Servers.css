@@ -371,25 +371,22 @@
 }
 
 .mod .mod_info  {
+	/* background: red	; */
 	display: flex;
 	flex-wrap: nowrap;
 	justify-content: center;
-	/* align-items: center; */
 	flex-direction: row;
-	/* margin-left: 22px; */
+	padding: 0 14px 0 14px;
 }
 
 
 .mod .mod_info p {
-	/* background: red; */
+
 	font-weight: 600;
 	font-size: 20px;
 	white-space: nowrap;
 	line-height: 154.5%;
-	/* background: red; */
 	max-width:200px;
-	/* width: auto; */
-	
 	color: white;
 }
 
@@ -397,19 +394,14 @@
 
 .mod_info p.type {
 	display: flex;
-	/* text-align: center; */
-	margin-left: 8px;
-	padding: 0 14px 0 14px;
-	align-items: center;
 	justify-content: center;
-	
-	flex-wrap: nowrap;
+	align-items: center;
 	height: 25px;
-	/* background: #2E71EF; */
+	padding: 0 14px 0 14px;
 	border-radius: 6px;
-	font-weight: 500;
 	font-size: 14px;
-	line-height: 154.5%;
+	font-weight: 500;
+	margin-left: 8px;
 }
 
 .gamemodes_list p {

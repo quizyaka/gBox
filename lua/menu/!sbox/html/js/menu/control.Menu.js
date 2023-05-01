@@ -237,15 +237,16 @@ function MenuController( $scope, $rootScope )
 	$scope.GetGame = function() {
 		if (!$scope.InGame) {
 			return `
-				background: url(https://media.discordapp.net/attachments/918836840927215657/1049446963642376252/background.png?width=1193&height=671) no-repeat;
+				background: url(img/sbox/background2.png) no-repeat;
     			background-size: cover; 
-				background-positopn:center; 
+				background-position:center; 
 			`
 			
 		} else return `
-			background: none;
-			background-size: 100%; 
-			height: 100%; 
+		background: url(img/sbox/background3.png) no-repeat;
+		background-size: cover; 
+		background-position:center;
+	
 		`
 	}
 
