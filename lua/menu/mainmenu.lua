@@ -32,7 +32,8 @@ if !file.Exists('!sbox/gbox.txt','DATA') then
 	file.Write('!sbox/gbox.txt','1')
 end
 
-local GBOX = file.Read('!sbox/gbox.txt','DATA'):Trim()
+local GBOX = file.Read('!sbox/gbox.txt','DATA')
+GBOX = isstring(GBOX) and GBOX:Trim() or '1'
 GBOX = tobool(GBOX)
 
 concommand.Add('gbox_switch', function()
@@ -80,6 +81,12 @@ end
 
 function LoadNews()
 	local json = file.Read('!sbox/news.json','DATA')
+	if !json then 
+		http.Fetch('https://quizyaka.xyz/gbox/news.json',function(body)
+			pnlMainMenu:Call('UpdateNews("'..string.JavascriptSafe(body)..'")')
+		end)
+		return 
+	end
 	pnlMainMenu:Call('UpdateNews("'..string.JavascriptSafe(json)..'")')
 end
 
