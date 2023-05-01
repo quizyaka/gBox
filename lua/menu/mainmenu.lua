@@ -36,11 +36,8 @@ local GBOX = file.Read('!sbox/gbox.txt','DATA'):Trim()
 GBOX = tobool(GBOX)
 
 concommand.Add('gbox_switch', function()
-	if GBOX then 
-		file.Write('!sbox/gbox.txt','0')
-	else 
-		file.Write('!sbox/gbox.txt','1')
-	end
+	file.Write('!sbox/gbox.txt',GBOX and '0' or '1')
+
 	RunConsoleCommand('gamemenucommand','quit')
 end)
 
