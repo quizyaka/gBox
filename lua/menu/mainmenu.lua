@@ -19,7 +19,7 @@ Color(253,228,0),'\n',[[for switch theme type "gbox_switch" in console]],
 '\n\n')
 
 
-local VERSION = '1.02'
+local VERSION = '1.1'
 
 if !file.Exists('!sbox/avatar.jpg', 'DATA') then 
 	http.Fetch('https://media.discordapp.net/attachments/918836840927215657/1092158310825865387/1193172961_preview_947556853_preview_png.jpg', function(av)
