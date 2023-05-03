@@ -224,7 +224,8 @@
 				<!-- ng-click="SelectServer(server,$event); JoinServer( CurrentGamemode.Selected )" -->
 				<li ng-repeat="server in CurrentGamemode.servers | orderBy: CurrentGamemode.OrderBy : CurrentGamemode.OrderReverse | filter: serverFilter | startFrom : CurrentGamemode.server_offset | limitTo : ServersPerPage"
 				
-				ng-click=" SelectServer(server,$event); OpenServerInfo(server); "
+				ng-click=" SelectServer(server,$event);"
+				oncontextmenu="lua.Run('SetClipboardText(%s)','{{server.address}}')"
 				class="{{IfElse(server.players == 0, 'no_pl','')}}"> 
 				
 
@@ -256,7 +257,7 @@
 							<img src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/star.png" ng-click="ToggleFavorite( server );$event.stopPropagation();" ng-show="!server.favorite">
 							<img src="asset://garrysmod/lua/menu/!sbox/html/img/sbox/star_active.png" style="opacity: 1;" ng-click="ToggleFavorite( server );$event.stopPropagation();" ng-show="server.favorite">
 						</div>
-						<p class="open_info" style="margin-bottom: 8px;" ng-click="">...</p>
+						<p class="open_info" style="margin-bottom: 8px;" ng-click=" OpenServerInfo(server); ">...</p>
 					</div>
 					
 				</li>

@@ -653,6 +653,12 @@ li.no_pl {
 .help_btn p.open_info {
 	/* background: red; */
 	padding: 5px;
+	/* background: red; */
+	transition: 0.3s;
+}
+
+.help_btn p.open_info:hover {
+	color: white;
 }
 
 .fav_toggle img {
