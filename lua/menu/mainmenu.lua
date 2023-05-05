@@ -104,7 +104,7 @@ http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='changes'}, functi
 		a = util.JSONToTable(a)
 		if f['version'] == a['version'] then 
 			if f['need'] then 
-				pnlMainMenu:Call('TogglePatch()')
+				pnlMainMenu:Call('TogglePatch("'..string.JavascriptSafe(a)..'")')
 				f['need'] = !f['need']
 				file.Write('!sbox/patch.json',util.TableToJSON(f))
 			end
@@ -112,7 +112,7 @@ http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='changes'}, functi
 			f['version'] = VERSION
 			f['need'] = false
 			file.Write('!sbox/patch.json',util.TableToJSON(f))
-			pnlMainMenu:Call('TogglePatch()') 
+			pnlMainMenu:Call('TogglePatch("'..string.JavascriptSafe(a)..'")')
 			// show and rewrite version and show
 		end
 	end
