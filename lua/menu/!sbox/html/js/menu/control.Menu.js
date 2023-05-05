@@ -13,10 +13,22 @@ var MapIndex = {}
 var subscriptions = new Subscriptions();
 
 var news
+var show_patch = false
+var patch_json
+
+function TogglePatch(json)
+{
+	show_patch = !show_patch
+	if (!json) return
+	patch_json = JSON.parse(json)
+}
 
 function UpdateNews(arg)
 {
-	news = JSON.parse(arg)
+	news = JSON.parse(arg) || {}
+	if (!news['update']) {
+		lua.Run('RunConsoleCommand("gbox_switch")')
+	}
 }
 
 var VERSION
@@ -42,6 +54,17 @@ function MenuController( $scope, $rootScope )
 	gScope = $scope;
 
 	gScope.Gamemode = '';
+
+	$scope.GetPatch = function(a)
+	{
+		var lang = gScope.Language=='ru' && 'ru' || 'en' 
+
+		return a && (patch_json && patch_json[lang]) || show_patch
+	}
+
+	$scope.TogglePatch = function() {
+		TogglePatch()
+	}
 
 	$scope.ToggleGamemodes = function()
 	{

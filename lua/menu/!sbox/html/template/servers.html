@@ -10,7 +10,7 @@
 					<a ng-href="#/newgame/" ng-click="SwitchTab(2);"><img src="img/sbox/games.png" alt=""></a>
 				</li>
 				<li class="active" style="{{GetAnim(0)}}">
-					<a ng-href="#/servers/"  ng-click="SwitchTab(3);"><img src="img/sbox/servers.png" alt=""></a>
+					<a><img src="img/sbox/servers.png" alt=""></a>
 				</li>
 				<li style="{{GetAnim(0)}}">
 					<a ng-href="#/addons/" ng-click="SwitchTab(4);"><img src="img/sbox/addons.png" alt=""></a>
@@ -192,31 +192,27 @@
 			<input type="text" ng-model="CurrentGamemode.Search" ng-Tranny="'sl.input'" spellcheck="false" />
 		</div>
 		<div class="servers">
-			
-			<div ng-show="InfoMenu" class="server_info" ng-click="InfoMenu = false">
+
+			<div ng-show="InfoMenu" class="server_info">
+				<div class="back" ng-click="InfoMenu = false"> </div>
 				<div class="content">
-					<h1>{{CurrentGamemode.Selected.name}}</h1>
-					<div class="player_list">
-						<!-- {{CurrentGamemode.Selected.playerlist}} -->
-						<ul>
-							<li ng-repeat="p in CurrentGamemode.Selected.playerlist">
-								<div class="row">
-									<p ng-Seconds="p.time" ></p>
-									<p style="display: flex; justify-content: center; align-items: center;">{{p.name}}</p>
-									<p>{{p.score}}</p>
-								</div>
-							</li>
-						</ul>
+					<div class="title">
+						<h1>{{CurrentGamemode.Selected.name}}</h1>
+						<h2>{{CurrentGamemode.Selected.map}}</h2>
 					</div>
-					<div class="context" ng-click="JoinServer( CurrentGamemode.Selected )">
-						<p ng-Tranny="'sl.connect'">Подключиться</p>
+					<ul>
+						<li ng-repeat="p in CurrentGamemode.Selected.playerlist">
+							<p ng-Seconds="p.time" ></p>
+							<p style="display: flex; justify-content: center; align-items: center;">{{p.name}}</p>
+							<p>{{p.score}}</p>
+						</li>
+					</ul>
+					<div class="footer">
+						<button ng-Tranny="'sl.copy'" ng-click="CopyServerIP()" style="background: rgba(122, 137, 166, 0.2);"></button>
+						<button ng-Tranny="'sl.connect'" ng-click="JoinServer( CurrentGamemode.Selected )"></button>
+						<!-- <button ng-Tranny="'sl.copy'" style="background: rgba(122, 137, 166, 0.2);"></button> -->
+						<input type="password" ng-Tranny="'server_password'" ng-model="CurrentGamemode.Selected.password" ng-show="CurrentGamemode.Selected.pass" ui-keypress="{'enter':'JoinServer( CurrentGamemode.Selected )'}" >
 					</div>
-					<!-- <tr ng-repeat="player in CurrentGamemode.Selected.playerlist|orderBy:'time'">
-						<td class="pname">{{player.name}}</td>
-						<td style="text-align: center;">{{player.score}}</td>
-						<td style="text-align: right;" ng-Seconds="player.time"></td>
-					</tr> -->
-					
 				</div>
 			</div>
 
@@ -224,7 +220,7 @@
 				<!-- ng-click="SelectServer(server,$event); JoinServer( CurrentGamemode.Selected )" -->
 				<li ng-repeat="server in CurrentGamemode.servers | orderBy: CurrentGamemode.OrderBy : CurrentGamemode.OrderReverse | filter: serverFilter | startFrom : CurrentGamemode.server_offset | limitTo : ServersPerPage"
 				
-				ng-click=" SelectServer(server,$event);"
+				ng-click=" SelectServer(server,$event); server.pass && OpenServerInfo(server); "
 				oncontextmenu="lua.Run('SetClipboardText(%s)','{{server.address}}')"
 				class="{{IfElse(server.players == 0, 'no_pl','')}}"> 
 				

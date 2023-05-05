@@ -482,10 +482,8 @@
 	font-weight: 500;
 	font-size: 16px;
 	line-height: 154.5%;
-	/* identical to box height, or 25px */
-
 	letter-spacing: 0.1em;
-
+	font-family: 'Gilroy Medium';
 	color: rgba(255, 255, 255, 0.4);
 }
 
@@ -549,7 +547,7 @@
 	background: rgba(122, 137, 166, 0.15);
 }
 
-.servers_list .player_list li:hover {
+.servers_list li:hover {
 	background: rgba(122, 137, 166, 0.1);
 }
 
@@ -671,12 +669,11 @@ li.no_pl {
 
 .servers .server_info {
 	position: absolute;
-	top: 0px;
+	top: 0;
 	left: 0;
 	width: 100%;
-	height: 100%;
+	height: 100vh;
 	z-index: 900;
-	padding: 25px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -684,91 +681,128 @@ li.no_pl {
 }
 
 .server_info .content {
-	height: 80%;
-	width: 60%;
-	display: flex;
-	/* justify-content: center; */
-	flex-direction: column;
-	align-items: center;
+	width: 55vw; 
+	padding: 2vw;
+	font-family: 'Gilroy Medium';
+	height: 65vh;
 	backdrop-filter: blur(12px) saturate(200%);
     -webkit-backdrop-filter: blur(12px) saturate(200%);
     background-color: rgba(53, 53, 53, 0.3);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
-}
-
-.content .player_list ul{
-	margin: 30px 0 0 0;
-	width: 1000px;
+	
 	display: flex;
 	flex-direction: column;
-	overflow-y:auto;
-	padding-right: 15px;
-	height: 550px;
+	align-items: center;
+}
+
+.server_info .content .title {
+	display: flex;
+	/* background: red; */
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.server_info .back {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.content .title h1 {
+	font-weight: 800;
+	color: white;
+	font-size: 3vh;
+}
+
+.server_info .content .title h2 {
+	margin-top: 10px;
+	font-size: 3vh;
+	font-weight: lighter;
+}
+
+.server_info .content ul {
+	all: unset;
+	margin-top: 2vh;
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 45vh;
+	width: 50vw;
+	padding-right: 30px;
+	/* padding: 10px; */
+	/* background: red; */
+
+}
+
+.server_info .content ul li {
+	padding: 0 10px 0 10px ;
+	height: 5vh;
+	display: flex;
+	color: rgba(255, 255, 255, 0.678);
+	justify-content: space-between;
+	flex-direction: row;
 	align-items: center;
 	/* background: red; */
 }
 
-.content .player_list ul::-webkit-scrollbar {
+.content .footer {
+	margin-top: 3vh;
+	display: flex;
+	flex-direction: row;
+	width: 40vw;
+	justify-content: space-around;
+}
+
+.content .footer input {
+	padding-left: 18px;
+	background: rgba(122, 137, 166, 0.1);
+	border-radius: 6px;
+	border: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 154.5%;
+	letter-spacing: 0.1em;
+	width: 12vw;
+	height: 6vh;
+	color: rgba(255, 255, 255, 0.4);
+	font-family: 'Gilroy Medium';
+}
+
+/* .content .footer button {
+	margin-right: 5vw;
+} */
+
+.content .footer button {
+	background: #2e71ef;
+	width: 12vw;
+	height: 6vh;
+	border-radius: 6px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+	font-size: 1.3em;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+.content .footer button:hover {
+	width: 13vw;
+}
+
+.content ul::-webkit-scrollbar {
 	background: rgba(122, 137, 166, 0.1);
 	width: 4px;
 	border-radius: 3.5px;
 }
 
-.content .player_list ul::-webkit-scrollbar-thumb {
+.content  ul::-webkit-scrollbar-thumb {
 	background: rgba(255, 255, 255, 0.13);
 	border-radius: 3.5px;
 	width: 4px;
 }
 
-.server_info .content h1 {
-	margin-top: 30px;
-	font-style: normal;
-	font-weight: 700;
-	font-size: 25px;
-	line-height: 154.5%;
-	color: white;
-	letter-spacing: 0.05em;
-}
-
-.content .player_list li {
-	/* background: red; */
-	height: 50px;
-}
-
-.content .player_list .row {
-	display: flex;
-	flex-direction: row;
-	padding: 15px;
-	justify-content: space-between;
-	color: rgba(255, 255, 255, 0.5);
-	width: 100%;
-	height: 100%;
-	align-items: center;
-	cursor: default;
-}
-
-.context p {
-	font-size: 16px;
-	font-weight: 200;
-	line-height: 25px;
-	letter-spacing: 0.005em;
-	color: white;
-}
-
-.content .context {
-	margin: 0;
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 70px;
-	width: 300px;
-	border-radius: 4px;
-	cursor: pointer;
-	background: #2E71EF;
-	margin-top: 50px;
-}
 
 .servers_list li  p.transp {
 	color: rgba(255, 255, 255, 0.486);

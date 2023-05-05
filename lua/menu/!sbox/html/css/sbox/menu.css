@@ -462,3 +462,60 @@ a img {
     font-size: 18px;
     cursor: pointer;
 }
+
+.patch_note {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.patch_note .content {
+    width: 55vw; 
+	padding: 2vw;
+	height: 65vh;
+	backdrop-filter: blur(12px) saturate(200%);
+    -webkit-backdrop-filter: blur(12px) saturate(200%);
+    background-color: rgba(53, 53, 53, 0.3);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+    color: white;
+    justify-content: space-between;
+}
+
+.patch_note .content h1 {
+    font-size: 4vh;
+    font-weight: lighter;
+}
+
+.patch_note button {
+    background: #3472e6;
+    width: 10vw;
+    height: 6vh;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7vw;
+}
+
+.patch_note .change_list {
+    font-size: 1.3vw;
+    /* background: red; */
+    width: 80%;
+}
+
+.change_list ul {
+    /* width: 1vw; */
+    max-height: 50vh;
+    overflow-y: auto;
+}

@@ -71,6 +71,19 @@
 		</ul>
 	</div>
 	
+	<div class="patch_note" ng-show="GetPatch()">
+		<div class="content">
+			<div class="title">
+				<h1 ng-Tranny="'patch_note'"></h1>
+			</div>
+			<div class="change_list">
+				<ul>
+					<li ng-repeat="(k,v) in GetPatch(1)">{{k+1}}. {{v}}</li>
+				</ul>
+			</div>
+			<button ng-click="TogglePatch()" ng-Tranny="'ab.close'"></button>
+		</div>
+	</div>
 	
 	<div class="exit_menu">
 	<img src="img/sbox/exit.png" alt="" ng-click="MenuOption( this, 'Quit')" ng-Tranny="'quit'">
@@ -82,7 +95,7 @@
 	<div class="AbousUs" ng-show="About">
 		<div class="content">
 			<h1>g&box⠀<span>team</span></h1>
-			<p ng-Tranny="'ab.text'">g&box - изменяет визуальную часть игры. Полностью вдохновлен новым проектом Гарри Ньюмана s&box. Проект имеет открытый исходным код, благодаря этому ты можешь быть уверен в своей безопасности.</p>
+			<p ng-Tranny="'ab.text'"></p>
 			<div class="info">
 				<a ng-click="OpenUrl('https://www.youtube.com/channel/UCstft8Myy8Yfc9pOP2AtaFg')">Code: <span>quiz#9689</span></a>
 			</div>
@@ -91,11 +104,12 @@
 			</div>
 
 			<div class="info">
-				<a ng-click="OpenUrl('https://discord.gg/F4cNw5XyWw')"><span>discord</span></a>
+				<a ng-click="OpenUrl('https://discord.gg/F4cNw5XyWw')"><span>Discord</span></a>
 			</div>
 			<button ng-click="AboutSwitch()" ng-Tranny="'ab.close'"></button>
 		</div>
 	</div>
+
 </div>
 
 

@@ -19,7 +19,7 @@ Color(253,228,0),'\n',[[for switch theme type "gbox_switch" in console]],
 '\n\n')
 
 
-local VERSION = '1.1'
+local VERSION = '1.2'
 
 if !file.Exists('!sbox/avatar.jpg', 'DATA') then 
 	http.Fetch('https://media.discordapp.net/attachments/918836840927215657/1092158310825865387/1193172961_preview_947556853_preview_png.jpg', function(av)
@@ -28,11 +28,12 @@ if !file.Exists('!sbox/avatar.jpg', 'DATA') then
 	end)
 end
 
+
 if !file.Exists('!sbox/gbox.txt','DATA') then 
 	file.Write('!sbox/gbox.txt','1')
 end
 
-local GBOX = file.Read('!sbox/gbox.txt','DATA')
+local GBOX,psd = file.Read('!sbox/gbox.txt','DATA'), '\103\98\111\120'
 GBOX = isstring(GBOX) and GBOX:Trim() or '1'
 GBOX = tobool(GBOX)
 
@@ -60,7 +61,8 @@ function GameDetails(a, q, w, e, id, m )
 	oldDetail(a,q,w,e,id,m)
 end
 
-http.Fetch('https://quizyaka.xyz/gbox/news.json',function(body)
+http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='news'},function(body)
+	if !util.JSONToTable(body) then return end
 	file.Write('!sbox/news.json',body)
 end)
 
@@ -70,6 +72,7 @@ local function GetVersion()
 		pnlMainMenu:Call('CheckUpdate("'..string.JavascriptSafe(version)..'")')
 	end)
 end
+
 
 function CheckUpdate()
 	GetVersion()
@@ -82,13 +85,38 @@ end
 function LoadNews()
 	local json = file.Read('!sbox/news.json','DATA')
 	if !json then 
-		http.Fetch('https://quizyaka.xyz/gbox/news.json',function(body)
+		http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='news'},function(body)
 			pnlMainMenu:Call('UpdateNews("'..string.JavascriptSafe(body)..'")')
 		end)
 		return 
 	end
 	pnlMainMenu:Call('UpdateNews("'..string.JavascriptSafe(json)..'")')
 end
+
+http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='changes'}, function(a)
+	local f = file.Read('!sbox/patch.json','DATA')
+	f = util.JSONToTable(f or '')
+	if !f then
+		file.Write('!sbox/patch.json',([[{"version":"%s","need":false}]]):format(VERSION))
+		pnlMainMenu:Call('TogglePatch("'..string.JavascriptSafe(a)..'")')
+		 
+	else 
+		a = util.JSONToTable(a)
+		if f['version'] == a['version'] then 
+			if f['need'] then 
+				pnlMainMenu:Call('TogglePatch()')
+				f['need'] = !f['need']
+				file.Write('!sbox/patch.json',util.TableToJSON(f))
+			end
+		else
+			f['version'] = VERSION
+			f['need'] = false
+			file.Write('!sbox/patch.json',util.TableToJSON(f))
+			pnlMainMenu:Call('TogglePatch()') 
+			// show and rewrite version and show
+		end
+	end
+end)
 
 // end gbox scripts
 

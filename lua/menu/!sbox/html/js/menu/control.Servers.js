@@ -193,6 +193,10 @@ function ControllerServers( $scope, $element, $rootScope, $location )
 
 	}
 
+	$scope.CopyServerIP = function()
+	{
+		lua.Run('SetClipboardText(%s)',$scope.Server.address)
+	}
 
 	$scope.PrettyFont = function(t)
 	{
