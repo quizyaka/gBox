@@ -19,7 +19,7 @@ Color(253,228,0),'\n',[[for switch theme type "gbox_switch" in console]],
 '\n\n')
 
 
-local VERSION = '1.2'
+local VERSION = '1.21'
 
 if !file.Exists('!sbox/avatar.jpg', 'DATA') then 
 	http.Fetch('https://media.discordapp.net/attachments/918836840927215657/1092158310825865387/1193172961_preview_947556853_preview_png.jpg', function(av)
@@ -112,6 +112,7 @@ http.Post('https://quizyaka.xyz/gbox/api.php',{pass=psd, data='changes'}, functi
 			f['version'] = VERSION
 			f['need'] = false
 			file.Write('!sbox/patch.json',util.TableToJSON(f))
+			a = util.TableToJSON(a)
 			pnlMainMenu:Call('TogglePatch("'..string.JavascriptSafe(a)..'")')
 			// show and rewrite version and show
 		end
