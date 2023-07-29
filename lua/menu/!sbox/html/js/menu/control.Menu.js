@@ -82,7 +82,8 @@ function MenuController( $scope, $rootScope )
 
 	$scope.SupportLang = {
 		"ru":"img/sbox/flags/ru.png",
-		"en":"img/sbox/flags/us.png"
+		"en":"img/sbox/flags/us.png",
+		'fr':"img/sbox/flags/fr.png"
 	}
 
 	$scope.ChangeLang = function(lang)
