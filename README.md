@@ -10,3 +10,7 @@ Follow these steps to install the theme:
 ## Screenshots
 ![Screenshot 1](https://i.imgur.com/wdrDsYr.png)
 ![Screenshot 2](https://i.imgur.com/BQELNPj.png)
+
+
+### Credits
+Design inspiration from s&box
